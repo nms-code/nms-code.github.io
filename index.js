@@ -32,7 +32,6 @@ window.onload = () => {
     searchInput.addEventListener('input', () => {
         search(searchInput.value.toLowerCase());
     });
-    search(searchInput.value.toLowerCase());
     fetchAll();
 };
 
@@ -322,6 +321,7 @@ async function fetchAll() {
     setStatus('Done');
     console.log('Total ' + Object.keys(allClasses).length + ' classpaths loaded into your browser!');
     document.getElementById('Container').style.display = 'flex';
+    search(searchInput.value.toLowerCase());
     setTimeout(() => {
         document.getElementById('LoaderContainer').style.opacity = '0';
         document.getElementById('Container').style.opacity = '100';
